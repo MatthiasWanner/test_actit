@@ -4,7 +4,7 @@
 
 This project countain simple Vue.js app that display bubbles animation
 
-> 💡 You have to install [Node.js](https://www.docker.com/products/docker-desktop 'Node.js website') on your computer to run locally
+> 💡 You have to install [Node.js](https://nodejs.org/en/ 'Node.js website') on your computer to run locally
 
 ## Run Locally
 
