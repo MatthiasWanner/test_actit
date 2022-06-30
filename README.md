@@ -1,16 +1,55 @@
-# Vue 3 + TypeScript + Vite
+# Preuveo Technical Challenge
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Vue 3 + TypeScript + Vite
 
-## Recommended IDE Setup
+This project countain simple Vue.js app that display bubbles animation
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+> 💡 You have to install [Node.js](https://www.docker.com/products/docker-desktop 'Node.js website') on your computer to run locally
 
-## Type Support For `.vue` Imports in TS
+## Run Locally
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+Clone repo from GitHub
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+```bash
+  git clone https://github.com/MatthiasWanner/test_preuveo.git
+  cd test_preuveo
+```
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+Install node dependencies
+
+```bash
+yarn
+```
+
+Launch local development Vite server
+
+```bash
+yarn dev
+```
+
+Build project and start server
+
+```bash
+yarn build && yarn preview
+```
+
+## ⚙️ Tools list:
+
+- ESLint / Prettier (vue/ts config)
+- Husky hooks:
+  - pre-commit:
+    - can't commit locally on master branch
+    - format with prettier
+    - check code linting with eslint
+  - pre-push:
+    - build project before push work
+  - prepare-commit-msg:
+    - run commitizen cli to write commits
+    - prevent local commit on master
+- commitizen:
+  - config cz-emojis
+    > 💡 You have not to launch git cz to run commitizen cli. A Git hook is intalled on `git commit` cmd. In this way, you can change the message at the end of the process with vim
+- GitHub actions:
+  - Pull requests on master branch:
+    - check code linting
+    - build the project
