@@ -3,12 +3,22 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from './components/HelloWorld.vue';
 import RandomBubble from './components/RandomBubble.vue';
+import {
+  randomizeTailwindColor,
+  randomizeTailwindNuance,
+  randomizeTailwindSize,
+} from './utils';
 </script>
 
 <template>
   <img class="m-auto" alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
-  <RandomBubble class="m-auto" :color="`bg-green-400`" :size="`w-24 h-24`" />
+  <RandomBubble
+    class="m-auto"
+    :color="randomizeTailwindColor()"
+    :nuance="randomizeTailwindNuance()"
+    :size="randomizeTailwindSize()"
+  />
 </template>
 
 <style lang="scss">
