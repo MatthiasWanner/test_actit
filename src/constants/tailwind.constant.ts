@@ -1,7 +1,6 @@
 import { TailwindColor, TailwindFixedSize, TailwindNuance } from '../types';
 
 export const tailwindColors: TailwindColor[] = [
-  'black',
   'slate',
   'gray',
   'zinc',
