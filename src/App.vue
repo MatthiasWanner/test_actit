@@ -8,7 +8,7 @@ import { IBubbleProps } from './types';
 import { getBubbleId, getRandomInt, randomizeBubbleProps } from './utils';
 
 const bubblesProps = ref<IBubbleProps[]>(
-  new Array(getRandomInt(50, 201)).fill(null).map(() => randomizeBubbleProps()),
+  new Array(getRandomInt(300, 501)).fill(null).map(() => randomizeBubbleProps()),
 );
 
 const displayTime = ref<number>(getRandomInt(10, 100));
