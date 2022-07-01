@@ -1,13 +1,15 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue';
+import { ref } from 'vue';
+
 import RandomBubble from './components/RandomBubble.vue';
-import {
-  randomizeTailwindColor,
-  randomizeTailwindNuance,
-  randomizeTailwindSize,
-} from './utils';
+import { IBubbleProps } from './types';
+import { getRandomInt, randomizeBubbleProps } from './utils';
+
+const bubblesProps = ref<IBubbleProps[]>(
+  new Array(getRandomInt(50, 101)).fill(null).map(() => randomizeBubbleProps()),
+);
 </script>
 
 <template>
