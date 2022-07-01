@@ -10,6 +10,11 @@ import { getBubbleId, getRandomInt, randomizeBubbleProps } from './utils';
 const bubblesProps = ref<IBubbleProps[]>(
   new Array(getRandomInt(50, 101)).fill(null).map(() => randomizeBubbleProps()),
 );
+
+const refreshBubbleArray = () => {
+  const randomIndex = getRandomInt(0, bubblesProps.value.length);
+  bubblesProps.value.splice(randomIndex, 1, randomizeBubbleProps());
+};
 </script>
 
 <template>
@@ -21,6 +26,7 @@ const bubblesProps = ref<IBubbleProps[]>(
     :nuance="singleProps.nuance"
     :size="singleProps.size"
   />
+  <button @click="refreshBubbleArray">Test</button>
 </template>
 
 <style lang="scss">
