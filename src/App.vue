@@ -13,13 +13,13 @@ const bubblesProps = ref<IBubbleProps[]>(
 </script>
 
 <template>
-  <img class="m-auto" alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
   <RandomBubble
+    v-for="singleProps in bubblesProps"
+    :key="Object.keys(singleProps).join('_')"
     class="m-auto"
-    :color="randomizeTailwindColor()"
-    :nuance="randomizeTailwindNuance()"
-    :size="randomizeTailwindSize()"
+    :color="singleProps.color"
+    :nuance="singleProps.nuance"
+    :size="singleProps.size"
   />
 </template>
 
@@ -32,5 +32,7 @@ const bubblesProps = ref<IBubbleProps[]>(
   color: #2c3e50;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>
