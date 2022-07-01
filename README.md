@@ -6,6 +6,24 @@ This project countain simple Vue.js app that display bubbles animation
 
 > 💡 You have to install [Node.js](https://nodejs.org/en/ 'Node.js website') on your computer to run locally
 
+## Instructions
+
+- 🧰 Use VueJS or ReactJS, without Canvas.
+- 🧮 Display random number of circles.
+- 📏 Each circle has a random size between 2 values.
+- ⏰ Each circle remains displayed for a random time.
+- 🔁 There are the same number of display circles all the time.
+
+## Result
+
+<div style="text-align:center;">
+
+![Result demo](https://i.imgur.com/e3z7VSe.gif)
+
+</div>
+
+> Also in live [here](https://preuveo-bubbles.netlify.app/ 'Node.js website') 🔎
+
 ## Run Locally
 
 Clone repo from GitHub
