@@ -5,7 +5,7 @@ import { ref } from 'vue';
 
 import RandomBubble from './components/RandomBubble.vue';
 import { IBubbleProps } from './types';
-import { getRandomInt, randomizeBubbleProps } from './utils';
+import { getBubbleId, getRandomInt, randomizeBubbleProps } from './utils';
 
 const bubblesProps = ref<IBubbleProps[]>(
   new Array(getRandomInt(50, 101)).fill(null).map(() => randomizeBubbleProps()),
@@ -14,9 +14,9 @@ const bubblesProps = ref<IBubbleProps[]>(
 
 <template>
   <RandomBubble
-    v-for="singleProps in bubblesProps"
-    :key="Object.keys(singleProps).join('_')"
-    class="m-auto"
+    v-for="(singleProps, index) in bubblesProps"
+    :key="getBubbleId(singleProps, index)"
+    :class="`m-auto`"
     :color="singleProps.color"
     :nuance="singleProps.nuance"
     :size="singleProps.size"
@@ -32,7 +32,9 @@ const bubblesProps = ref<IBubbleProps[]>(
   color: #2c3e50;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-wrap: wrap;
+  position: relative;
 }
 </style>
