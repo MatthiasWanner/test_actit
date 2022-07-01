@@ -13,16 +13,20 @@ interface IProps {
 
 const props = defineProps<IProps>();
 
-const xPosition = ref<number>(getRandomInt(0, window.innerWidth + 1));
-const yPosition = ref<number>(getRandomInt(0, window.innerHeight + 1));
 const componentId = ref<string>(getBubbleId(props, getRandomInt(100, 1000000)));
 
 onMounted(() => {
   const element = document.querySelector(`.${componentId.value}`);
 
   if (element) {
-    (element as HTMLBodyElement).style.top = `${yPosition.value}px`;
-    (element as HTMLBodyElement).style.left = `${xPosition.value}px`;
+    (element as HTMLBodyElement).style.top = `${getRandomInt(
+      0,
+      window.innerHeight + 1,
+    )}px`;
+    (element as HTMLBodyElement).style.left = `${getRandomInt(
+      0,
+      window.innerWidth + 1,
+    )}px`;
   }
 });
 </script>
