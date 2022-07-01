@@ -1,20 +1,35 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import { ref } from 'vue';
+import { onMounted, onUpdated, ref } from 'vue';
 
 import RandomBubble from './components/RandomBubble.vue';
 import { IBubbleProps } from './types';
 import { getBubbleId, getRandomInt, randomizeBubbleProps } from './utils';
 
 const bubblesProps = ref<IBubbleProps[]>(
-  new Array(getRandomInt(50, 101)).fill(null).map(() => randomizeBubbleProps()),
+  new Array(getRandomInt(50, 201)).fill(null).map(() => randomizeBubbleProps()),
 );
+
+const displayTime = ref<number>(getRandomInt(10, 100));
 
 const refreshBubbleArray = () => {
   const randomIndex = getRandomInt(0, bubblesProps.value.length);
   bubblesProps.value.splice(randomIndex, 1, randomizeBubbleProps());
 };
+
+const handleAnimation = () => {
+  setTimeout(refreshBubbleArray, displayTime.value);
+  displayTime.value = getRandomInt(10, 100);
+};
+
+onMounted(() => {
+  handleAnimation();
+});
+
+onUpdated(() => {
+  handleAnimation();
+});
 </script>
 
 <template>
@@ -26,7 +41,6 @@ const refreshBubbleArray = () => {
     :nuance="singleProps.nuance"
     :size="singleProps.size"
   />
-  <button @click="refreshBubbleArray">Test</button>
 </template>
 
 <style lang="scss">
