@@ -1,4 +1,5 @@
 import { tailwindColors, tailwindNuances, tailwindSizes } from '../constants';
+import { IBubbleProps } from '../types';
 
 /**
  * @param min minimum interval (included)
@@ -21,3 +22,9 @@ export const randomizeTailwindNuance = () =>
   getRandomArrayOutput(tailwindNuances);
 
 export const randomizeTailwindSize = () => getRandomArrayOutput(tailwindSizes);
+
+export const randomizeBubbleProps = (): IBubbleProps => ({
+  color: randomizeTailwindColor(),
+  nuance: randomizeTailwindNuance(),
+  size: randomizeTailwindSize(),
+});
