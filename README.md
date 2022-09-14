@@ -1,4 +1,4 @@
-# Preuveo Technical Challenge
+# Act'it Technical Challenge
 
 ## Vue 3 + TypeScript + Vite
 
@@ -22,15 +22,15 @@ This project countain simple Vue.js app that display bubbles animation
 
 </div>
 
-> Also in live [here](https://preuveo-bubbles.netlify.app/ 'Node.js website') 🔎
+> Also in live [here](https://actit-bubbles.netlify.app/ 'Preview website') 🔎
 
 ## Run Locally
 
 Clone repo from GitHub
 
 ```bash
-  git clone https://github.com/MatthiasWanner/test_preuveo.git
-  cd test_preuveo
+  git clone https://github.com/MatthiasWanner/test_actit.git
+  cd test_actit
 ```
 
 Install node dependencies
